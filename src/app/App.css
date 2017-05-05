@@ -33,12 +33,31 @@ body {
 
 .App-query {
 	padding: 10px;
+	padding-bottom: 2px;
+}
+
+.App-matchedResultOnly {
+	font-size: .8em;
+	float: right;
+	padding-right: 10px;
+}
+
+.App-matchedResultOnly label {
+	padding-right: 5px;
+	cursor: pointer;
+}
+
+.App-matchedResultOnly input[type=checkbox] {
+	margin: 0;
+	line-height: 15px;
+	cursor: pointer;
+	vertical-align: middle;
 }
 
 .App-result {
 	border-top: 1px solid #bbb;
 	position: absolute;
-	top: 60px;
+	top: 70px;
 	right: 0;
 	left: 0;
 	bottom: 0;

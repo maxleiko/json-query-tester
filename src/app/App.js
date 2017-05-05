@@ -16,7 +16,8 @@ class App extends Component {
 					{ name: 'user', owner: 'user', typeDefinitions: [] }
 				]
 			},
-			query: props.query || 'namespaces'
+			query: props.query || 'namespaces',
+			matchedResultOnly: false
 		};
 	}
 
@@ -30,10 +31,18 @@ class App extends Component {
 		localStorage.set('query', query);
 	}
 
+	onMatchedResultOnlyUpdated() {
+		this.setState({ matchedResultOnly: !this.state.matchedResultOnly });
+		localStorage.set('matchedResultOnly', this.state.matchedResultOnly);
+	}
+
 	render() {
 		let result = {};
 		try {
 			result = jsonQuery(this.state.query, { data: this.state.model });
+			if (this.state.matchedResultOnly) {
+				result = result.value;
+			}
 		} catch (ignore) {}
 
 		return (
@@ -49,6 +58,15 @@ class App extends Component {
 			<div className="App-rightPanel">
 					<div className="App-query">
 						<Query value={this.state.query} onChange={(evt) => this.onQueryUpdated(evt.target.value)} />
+					</div>
+					<div className="App-matchedResultOnly">
+						<label htmlFor="matched-result-only">Display the matched result only?</label>
+						<input
+							type="checkbox"
+							id="matched-result-only"
+							defaultValue={this.state.matchedResultOnly}
+							onChange={() => this.onMatchedResultOnlyUpdated()}
+						/>
 					</div>
 					<div className="App-result">
 						<JSONEditor model={result} options={{ readOnly: true }} />
