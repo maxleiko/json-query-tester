@@ -5,7 +5,10 @@ import localStorage from './util/localStorage';
 import './index.css';
 
 const model = localStorage.get('model');
-const query = localStorage.get('query')
+const query = localStorage.get('query');
+const matchedResultOnly = localStorage.get('matchedResultOnly');
 
 ReactDOM.render(
-	<App model={model} query={query} />, document.getElementById('root'));
+	<App model={model} query={query} matchedResultOnly={matchedResultOnly} />,
+	document.getElementById('root')
+);

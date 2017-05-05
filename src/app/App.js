@@ -8,7 +8,7 @@ import localStorage from '../util/localStorage';
 class App extends Component {
 
 	constructor(props) {
-		super(props)
+		super(props);
 		this.state = {
 			model: props.model || {
 				namespaces: [
@@ -17,7 +17,7 @@ class App extends Component {
 				]
 			},
 			query: props.query || 'namespaces',
-			matchedResultOnly: false
+			matchedResultOnly: props.matchedResultOnly
 		};
 	}
 
@@ -31,9 +31,9 @@ class App extends Component {
 		localStorage.set('query', query);
 	}
 
-	onMatchedResultOnlyUpdated() {
-		this.setState({ matchedResultOnly: !this.state.matchedResultOnly });
-		localStorage.set('matchedResultOnly', this.state.matchedResultOnly);
+	onMatchedResultOnlyUpdated(value) {
+		this.setState({ matchedResultOnly: value });
+		localStorage.set('matchedResultOnly', value);
 	}
 
 	render() {
@@ -64,8 +64,8 @@ class App extends Component {
 						<input
 							type="checkbox"
 							id="matched-result-only"
-							defaultValue={this.state.matchedResultOnly}
-							onChange={() => this.onMatchedResultOnlyUpdated()}
+							checked={this.state.matchedResultOnly}
+							onChange={(evt) => this.onMatchedResultOnlyUpdated(evt.target.checked)}
 						/>
 					</div>
 					<div className="App-result">
