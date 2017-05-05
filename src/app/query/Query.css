@@ -1,0 +1,23 @@
+.Query-input {
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	background-color: #333;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	color: #fff;
+	font: 95% sans-serif;
+}
+
+.Query-input:focus {
+	box-shadow: 0 0 5px #eee;
+	padding: 10px;
+	border: 1px solid #eee;
+}

@@ -1,0 +1,45 @@
+body {
+	background-color: #111;
+	color: #ddd;
+}
+
+.App-header {
+  background-color: #222;
+  padding: 10px;
+  color: white;
+}
+
+.App-title {
+	margin: 0;
+	text-align: center;
+}
+
+.App-leftPanel {
+	position: absolute;
+	top: 48px;
+	right: 50%;
+	bottom: 0;
+	left: 0;
+	border-right: 1px solid #bbb;
+}
+
+.App-rightPanel {
+	position: absolute;
+	top: 48px;
+	right: 0;
+	bottom: 0;
+	left: 50%;
+}
+
+.App-query {
+	padding: 10px;
+}
+
+.App-result {
+	border-top: 1px solid #bbb;
+	position: absolute;
+	top: 60px;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
