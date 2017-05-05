@@ -60,7 +60,7 @@ class App extends Component {
 						<Query value={this.state.query} onChange={(evt) => this.onQueryUpdated(evt.target.value)} />
 					</div>
 					<div className="App-matchedResultOnly">
-						<label htmlFor="matched-result-only">Display the matched result only?</label>
+						<label htmlFor="matched-result-only">Display matched results only?</label>
 						<input
 							type="checkbox"
 							id="matched-result-only"
